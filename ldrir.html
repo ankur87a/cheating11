@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body><img src="irpic.jpg" alt="">
+    <p>/*<br>
+        
+        IR Proximity Sensor interface code<br>
+        Turns on an LED on when obstacle is <br>
+        detected, else off.<br>
+        */<br>
+        const int ProxSensor=4;<br>
+        void setup() <br>
+        { <br>
+        // initialize the digital Serial port.<br>
+        Serial.begin(9600);<br>               
+        // initialize the digital pin as an output.<br>
+        pinMode(10, OUTPUT);<br>     
+        pinMode(ProxSensor,INPUT);<br>
+        }<br>
+        void loop()<br> 
+        {<br>
+          if(digitalRead(ProxSensor)==HIGH)<br>
+        //Check the sensor output<br>
+          {<br>
+          digitalWrite(10, HIGH);   // set the LED on<br>
+          Serial.println("Kaushal kishor 12312824");  //Message on Serial Monitor<br>
+          }<br>
+          else<br>
+          {<br>
+          digitalWrite(10, LOW);    // set the LED off<br>
+          Serial.println("35");<br> 
+        //Message on Serial Monitor<br>
+          }<br>
+        delay(1000);              // wait for a second<br>
+        }<br></p>
+
+        <h1>ldr code down</h1>
+
+        const int ledPin = 13;<br>
+const int ldrPin = A0;<br>
+int threshold = 600;<br>
+
+void setup()<br>
+{<br>
+  Serial.begin(9600);<br>
+  pinMode(ledPin, OUTPUT);<br>
+  pinMode(ldrPin, INPUT);<br>
+}<br>
+
+void loop()<br>
+{<br>
+  int ldrStatus = analogRead(ldrPin);<br>
+
+  Serial.print("LDR Value: ");<br>
+  Serial.println(ldrStatus);<br>
+
+  if (ldrStatus <= threshold)<br>
+  {<br>
+    digitalWrite(ledPin, HIGH);<br>
+    Serial.println("It's Dark, Turning ON the LED");<br>
+  }<br>
+  else<br>
+  {<br>
+    digitalWrite(ledPin, LOW);<br>
+    Serial.println("It's BRIGHT, Turning OFF the LED");<br>
+  }<br>
+
+  delay(100);  // Adjust the delay as needed<br>
+}<br>
+<img src="ldrpic.jpg" alt="ldrpic">
+<img src="irpic.jpg" alt="">
+</body>
+</html>
+</body>
+</html>
